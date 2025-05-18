@@ -1,5 +1,9 @@
 import { useState } from "react";
+<<<<<<< HEAD
 import { LoginSession, getUserInformation } from "../../utils/appwriteConfig";
+=======
+import { LoginSession } from "../../utils/appwriteConfig";
+>>>>>>> 1ae4e6f (Sprint 3 - Implementacion de inicio de sesion para administrador, agregar producots, editar y eliminar, pruebas y correcciones de errores)
 import "./styles.css";
 import { useNavigate } from "react-router-dom";
 const Login = () => {
@@ -19,10 +23,15 @@ const Login = () => {
     event.preventDefault();
     event.stopPropagation();
     const { email, password } = form;
+<<<<<<< HEAD
     const response = await LoginSession(email, password);
     const userInfo = await getUserInformation(email);
 
     sessionStorage.setItem("userInfo", JSON.stringify(userInfo));
+=======
+
+    const response = await LoginSession(email, password);
+>>>>>>> 1ae4e6f (Sprint 3 - Implementacion de inicio de sesion para administrador, agregar producots, editar y eliminar, pruebas y correcciones de errores)
     if (response.userId) {
       setssucces("Registro exitoso");
 
@@ -38,9 +47,15 @@ const Login = () => {
     <div className="wrapper fadeInDown">
       <h1>Bienvenido</h1>
       <div id="formContent">
+<<<<<<< HEAD
         {/*<div className="fadeIn first">
           <img src="" id="icon" alt="User Icon" />
   </div>*/}
+=======
+        <div className="fadeIn first">
+          <img src="" id="icon" alt="User Icon" />
+        </div>
+>>>>>>> 1ae4e6f (Sprint 3 - Implementacion de inicio de sesion para administrador, agregar producots, editar y eliminar, pruebas y correcciones de errores)
 
         <form onSubmit={(event) => handleSubmit(event)}>
           <input
@@ -80,8 +95,13 @@ const Login = () => {
         </form>
 
         <div id="formFooter">
+<<<<<<< HEAD
           <a className="underlineHover" href="/register">
             Crear una cuenta
+=======
+          <a className="underlineHover" href="#">
+            Forgot Password?
+>>>>>>> 1ae4e6f (Sprint 3 - Implementacion de inicio de sesion para administrador, agregar producots, editar y eliminar, pruebas y correcciones de errores)
           </a>
         </div>
       </div>

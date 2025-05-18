@@ -17,12 +17,18 @@ const Navbar = () => {
     setQuantityProducts(products.length);
     getImgAvatar();
   }, [products.length]);
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1ae4e6f (Sprint 3 - Implementacion de inicio de sesion para administrador, agregar producots, editar y eliminar, pruebas y correcciones de errores)
   const loggout = () => {
     setUserDetails(null);
     LogOutSession();
     sessionStorage.removeItem("userDetails");
+<<<<<<< HEAD
     sessionStorage.removeItem("userInfo");
+=======
+>>>>>>> 1ae4e6f (Sprint 3 - Implementacion de inicio de sesion para administrador, agregar producots, editar y eliminar, pruebas y correcciones de errores)
     setTimeout(() => (window.location.href = "/"), 1000);
   };
 
@@ -30,7 +36,11 @@ const Navbar = () => {
     <nav className="navbar fixed-top navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
         <a className="navbar-brand" href="/">
+<<<<<<< HEAD
           {"Heladeria Funny's"}
+=======
+          Funny
+>>>>>>> 1ae4e6f (Sprint 3 - Implementacion de inicio de sesion para administrador, agregar producots, editar y eliminar, pruebas y correcciones de errores)
         </a>
         <button
           className="navbar-toggler"

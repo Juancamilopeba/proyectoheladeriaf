@@ -1,10 +1,14 @@
 import { useState } from "react";
+<<<<<<< HEAD
 import {
   LoginSession,
   createUser,
   getUserInformation,
   registerUser,
 } from "../../utils/appwriteConfig";
+=======
+import { LoginSession, createUser } from "../../utils/appwriteConfig";
+>>>>>>> 1ae4e6f (Sprint 3 - Implementacion de inicio de sesion para administrador, agregar producots, editar y eliminar, pruebas y correcciones de errores)
 import { useNavigate } from "react-router-dom";
 
 const Register = () => {
@@ -20,6 +24,7 @@ const Register = () => {
       [name]: value,
     });
   };
+<<<<<<< HEAD
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -45,6 +50,18 @@ const Register = () => {
     const errorRegister = register.message ? `or ${register.message}` : "";
 
     setError(`${errorResponse} ${errorCreateSession} ${errorRegister}`);
+=======
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const { email, password, name } = form;
+    const response = await createUser(email, password, name);
+    const createSession = await LoginSession(email, password);
+    if (response.status && createSession.userId) {
+      setssucces("Registro exitoso");
+      return navigate("/", { replace: false });
+    }
+    setError(response.message || createSession.message);
+>>>>>>> 1ae4e6f (Sprint 3 - Implementacion de inicio de sesion para administrador, agregar producots, editar y eliminar, pruebas y correcciones de errores)
   };
 
   return (
@@ -54,12 +71,17 @@ const Register = () => {
         <input
           type="text"
           name="name"
+<<<<<<< HEAD
           placeholder="Nombre"
+=======
+          placeholder="name"
+>>>>>>> 1ae4e6f (Sprint 3 - Implementacion de inicio de sesion para administrador, agregar producots, editar y eliminar, pruebas y correcciones de errores)
           onChange={(event) => handleForm(event)}
         />
         <input
           type="email"
           name="email"
+<<<<<<< HEAD
           placeholder="Correo"
           onChange={(event) => handleForm(event)}
         />
@@ -73,6 +95,9 @@ const Register = () => {
           type="phone"
           name="phone"
           placeholder="Celular"
+=======
+          placeholder="email"
+>>>>>>> 1ae4e6f (Sprint 3 - Implementacion de inicio de sesion para administrador, agregar producots, editar y eliminar, pruebas y correcciones de errores)
           onChange={(event) => handleForm(event)}
         />
         <input

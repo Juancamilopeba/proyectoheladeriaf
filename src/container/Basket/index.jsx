@@ -1,14 +1,24 @@
+<<<<<<< HEAD
 import { useRecoilState, useRecoilValue } from "recoil";
 import { productsState } from "../../recoil/products";
 import { numberFormat } from "../../utils/numberFormat";
 import { totalAmountState } from "../../recoil/totalAmount";
 import { userDetailsState } from "../../recoil/storeUserDetails";
+=======
+import { useRecoilState } from "recoil";
+import { productsState } from "../../recoil/products";
+import { numberFormat } from "../../utils/numberFormat";
+import { totalAmountState } from "../../recoil/totalAmount";
+>>>>>>> 1ae4e6f (Sprint 3 - Implementacion de inicio de sesion para administrador, agregar producots, editar y eliminar, pruebas y correcciones de errores)
 
 const Basket = () => {
   const [product, setProduct] = useRecoilState(productsState);
   const [totalAmount, setTotalAmount] = useRecoilState(totalAmountState);
+<<<<<<< HEAD
   const userInfo = JSON.parse(sessionStorage.getItem("userInfo"));
   const userDetails = useRecoilValue(userDetailsState);
+=======
+>>>>>>> 1ae4e6f (Sprint 3 - Implementacion de inicio de sesion para administrador, agregar producots, editar y eliminar, pruebas y correcciones de errores)
 
   const total = () => {
     let total = 0;
@@ -67,6 +77,7 @@ const Basket = () => {
         </table>
       )}
       <a href="/" className="btn btn-outline-primary m-1">
+<<<<<<< HEAD
         Seguir comprando - volver a la tienda
       </a>
       {userInfo && userDetails ? (
@@ -78,6 +89,13 @@ const Basket = () => {
           Login
         </a>
       )}
+=======
+        Seguir comprando
+      </a>
+      <a href="/checkout" className="btn btn-outline-success m-1">
+        Elegir metodo de pago
+      </a>
+>>>>>>> 1ae4e6f (Sprint 3 - Implementacion de inicio de sesion para administrador, agregar producots, editar y eliminar, pruebas y correcciones de errores)
     </div>
   );
 };
