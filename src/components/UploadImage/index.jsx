@@ -17,9 +17,9 @@ const UploadImage = () => {
   const handleChange = (event) => {
     setImage(event.target.files[0]);
 <<<<<<< HEAD
-    console.log("event");
 =======
->>>>>>> 6452f0c4b1e01a6a421d6a805ff32fb40c93ee66
+    console.log("event");
+>>>>>>> 1ae4e6f (Sprint 3 - Implementacion de inicio de sesion para administrador, agregar producots, editar y eliminar, pruebas y correcciones de errores)
   };
   const handleFormChange = (event) => {
     const { name, value } = event;
@@ -32,9 +32,9 @@ const UploadImage = () => {
     event.stopPropagation();
     const response = await createImage(image);
 <<<<<<< HEAD
-    console.log(image);
 =======
->>>>>>> 6452f0c4b1e01a6a421d6a805ff32fb40c93ee66
+    console.log(image);
+>>>>>>> 1ae4e6f (Sprint 3 - Implementacion de inicio de sesion para administrador, agregar producots, editar y eliminar, pruebas y correcciones de errores)
     const imageInfo = await getOneImage(response.$id);
     setInfoImage(imageInfo);
     setImageId(response.$id);

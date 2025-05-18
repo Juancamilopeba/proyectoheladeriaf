@@ -18,17 +18,17 @@ const Navbar = () => {
     getImgAvatar();
   }, [products.length]);
 <<<<<<< HEAD
-=======
 
->>>>>>> 6452f0c4b1e01a6a421d6a805ff32fb40c93ee66
+=======
+>>>>>>> 1ae4e6f (Sprint 3 - Implementacion de inicio de sesion para administrador, agregar producots, editar y eliminar, pruebas y correcciones de errores)
   const loggout = () => {
     setUserDetails(null);
     LogOutSession();
     sessionStorage.removeItem("userDetails");
 <<<<<<< HEAD
-=======
     sessionStorage.removeItem("userInfo");
->>>>>>> 6452f0c4b1e01a6a421d6a805ff32fb40c93ee66
+=======
+>>>>>>> 1ae4e6f (Sprint 3 - Implementacion de inicio de sesion para administrador, agregar producots, editar y eliminar, pruebas y correcciones de errores)
     setTimeout(() => (window.location.href = "/"), 1000);
   };
 
@@ -37,10 +37,10 @@ const Navbar = () => {
       <div className="container-fluid">
         <a className="navbar-brand" href="/">
 <<<<<<< HEAD
-          Funny
-=======
           {"Heladeria Funny's"}
->>>>>>> 6452f0c4b1e01a6a421d6a805ff32fb40c93ee66
+=======
+          Funny
+>>>>>>> 1ae4e6f (Sprint 3 - Implementacion de inicio de sesion para administrador, agregar producots, editar y eliminar, pruebas y correcciones de errores)
         </a>
         <button
           className="navbar-toggler"

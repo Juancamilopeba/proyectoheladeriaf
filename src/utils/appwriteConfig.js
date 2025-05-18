@@ -22,14 +22,6 @@ const avatars = new Avatars(client);
 
 const databaseId = "65a8013fdd232d57efd3";
 const bucketId = "65a802b0246b94944050";
-<<<<<<< HEAD
-const collectionIdIcecreams = "65a8015159adcca6121e";
-const collectionIdPedidos = "65a8015f695286a20312";
-
-export const createUser = async (email, password, name) => {
-  try {
-    const response = await account.create(ID.unique(), email, password, name);
-=======
 
 const collectionIdIcecreams = "65a8015159adcca6121e";
 const collectionIdPedidos = "65a8015f695286a20312";
@@ -77,7 +69,6 @@ export const createUser = async (email, password, name, phone) => {
       name,
       phone
     );
->>>>>>> 6452f0c4b1e01a6a421d6a805ff32fb40c93ee66
 
     return response;
   } catch (error) {
@@ -198,26 +189,13 @@ export const updateProduct = async (data, id) => {
   return response;
 };
 export const crearPredido = async (data) => {
-<<<<<<< HEAD
-=======
   console.log(data);
->>>>>>> 6452f0c4b1e01a6a421d6a805ff32fb40c93ee66
   try {
     const response = await databases.createDocument(
       databaseId,
       collectionIdPedidos,
       ID.unique(),
       {
-<<<<<<< HEAD
-        paymentMethod: data.paymentMethod,
-        direccion: data.direccion,
-        telefono: data.telefono,
-        username: data.username,
-        cantidad: String(data.quantity),
-        productName: data.productName,
-        price: data.price,
-        description: data.description,
-=======
         username: data.username,
         direccion: data.direccion,
         telefono: data.phone,
@@ -239,7 +217,6 @@ export const updateStatePedido = async (state, documentId) => {
       documentId,
       {
         estado: state,
->>>>>>> 6452f0c4b1e01a6a421d6a805ff32fb40c93ee66
       }
     );
     return response;

@@ -1,14 +1,14 @@
 import { useState } from "react";
 <<<<<<< HEAD
-import { LoginSession, createUser } from "../../utils/appwriteConfig";
-=======
 import {
   LoginSession,
   createUser,
   getUserInformation,
   registerUser,
 } from "../../utils/appwriteConfig";
->>>>>>> 6452f0c4b1e01a6a421d6a805ff32fb40c93ee66
+=======
+import { LoginSession, createUser } from "../../utils/appwriteConfig";
+>>>>>>> 1ae4e6f (Sprint 3 - Implementacion de inicio de sesion para administrador, agregar producots, editar y eliminar, pruebas y correcciones de errores)
 import { useNavigate } from "react-router-dom";
 
 const Register = () => {
@@ -25,17 +25,6 @@ const Register = () => {
     });
   };
 <<<<<<< HEAD
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    const { email, password, name } = form;
-    const response = await createUser(email, password, name);
-    const createSession = await LoginSession(email, password);
-    if (response.status && createSession.userId) {
-      setssucces("Registro exitoso");
-      return navigate("/", { replace: false });
-    }
-    setError(response.message || createSession.message);
-=======
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -61,7 +50,18 @@ const Register = () => {
     const errorRegister = register.message ? `or ${register.message}` : "";
 
     setError(`${errorResponse} ${errorCreateSession} ${errorRegister}`);
->>>>>>> 6452f0c4b1e01a6a421d6a805ff32fb40c93ee66
+=======
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const { email, password, name } = form;
+    const response = await createUser(email, password, name);
+    const createSession = await LoginSession(email, password);
+    if (response.status && createSession.userId) {
+      setssucces("Registro exitoso");
+      return navigate("/", { replace: false });
+    }
+    setError(response.message || createSession.message);
+>>>>>>> 1ae4e6f (Sprint 3 - Implementacion de inicio de sesion para administrador, agregar producots, editar y eliminar, pruebas y correcciones de errores)
   };
 
   return (
@@ -72,18 +72,16 @@ const Register = () => {
           type="text"
           name="name"
 <<<<<<< HEAD
-          placeholder="name"
-=======
           placeholder="Nombre"
->>>>>>> 6452f0c4b1e01a6a421d6a805ff32fb40c93ee66
+=======
+          placeholder="name"
+>>>>>>> 1ae4e6f (Sprint 3 - Implementacion de inicio de sesion para administrador, agregar producots, editar y eliminar, pruebas y correcciones de errores)
           onChange={(event) => handleForm(event)}
         />
         <input
           type="email"
           name="email"
 <<<<<<< HEAD
-          placeholder="email"
-=======
           placeholder="Correo"
           onChange={(event) => handleForm(event)}
         />
@@ -97,7 +95,9 @@ const Register = () => {
           type="phone"
           name="phone"
           placeholder="Celular"
->>>>>>> 6452f0c4b1e01a6a421d6a805ff32fb40c93ee66
+=======
+          placeholder="email"
+>>>>>>> 1ae4e6f (Sprint 3 - Implementacion de inicio de sesion para administrador, agregar producots, editar y eliminar, pruebas y correcciones de errores)
           onChange={(event) => handleForm(event)}
         />
         <input

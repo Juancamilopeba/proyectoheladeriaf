@@ -13,31 +13,6 @@ export const Checkout = () => {
   const [form, setForm] = useState({ paymentMethod: "contra entrega" });
   const [error, setError] = useState();
   const [success, setssucces] = useState();
-<<<<<<< HEAD
-
-  const handlerOnchange = (event) => {
-    setForm({ ...form, [event.target.name]: event.target.value });
-  };
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    event.stopPropagation();
-    product.forEach(async (product) => {
-      const response = await crearPredido({
-        ...form,
-        productName: product.name,
-        price: product.price,
-        description: product.description,
-        quantity: product.quantity,
-      });
-      if (!response.message) {
-        setssucces("Registro exitoso");
-        setTimeout(() => {
-          navigate("/", { replace: false });
-        }, 3000);
-      }
-      setError(response.message);
-    });
-=======
   const userInfo = JSON.parse(sessionStorage.getItem("userInfo")) || {};
   const handlerOnchange = (event) => {
     setForm({ ...form, [event.target.name]: event.target.value });
@@ -63,7 +38,6 @@ export const Checkout = () => {
       }, 3000);
     }
     setError(response.message);
->>>>>>> 6452f0c4b1e01a6a421d6a805ff32fb40c93ee66
   };
 
   return (
@@ -88,19 +62,13 @@ export const Checkout = () => {
               className="accordion-collapse collapse show"
             >
               <div className="accordion-body">
-<<<<<<< HEAD
-=======
                 <p>Identificacion: {userInfo.documents[0].cedula}</p>
->>>>>>> 6452f0c4b1e01a6a421d6a805ff32fb40c93ee66
                 <input
                   type="text"
                   name="username"
                   placeholder="Nombre completo"
                   className="form-control"
-<<<<<<< HEAD
-=======
                   value={userInfo.documents[0].name}
->>>>>>> 6452f0c4b1e01a6a421d6a805ff32fb40c93ee66
                   onChange={(event) => handlerOnchange(event)}
                 />
                 <input
@@ -108,10 +76,7 @@ export const Checkout = () => {
                   name="direccion"
                   placeholder="Direccion de envio"
                   className="form-control"
-<<<<<<< HEAD
-=======
                   value={form.direccion}
->>>>>>> 6452f0c4b1e01a6a421d6a805ff32fb40c93ee66
                   onChange={(event) => handlerOnchange(event)}
                 />
                 <input
@@ -119,10 +84,7 @@ export const Checkout = () => {
                   placeholder="Telefono"
                   name="telefono"
                   className="form-control"
-<<<<<<< HEAD
-=======
                   value={form.phone || userInfo.documents[0].phone}
->>>>>>> 6452f0c4b1e01a6a421d6a805ff32fb40c93ee66
                   onChange={(event) => handlerOnchange(event)}
                 />
                 <div className="">
@@ -143,37 +105,6 @@ export const Checkout = () => {
                       Contra entrega
                     </label>
                   </div>
-<<<<<<< HEAD
-                  <div className="form-check form-check-inline">
-                    <input
-                      className="form-check-input"
-                      type="radio"
-                      name="paymentMethod"
-                      value="pse"
-                      onChange={(event) => handlerOnchange(event)}
-                      checked={form.paymentMethod === "pse"}
-                      id="pse"
-                    />
-                    <label className="form-check-label" htmlFor="pse">
-                      PSE
-                    </label>
-                  </div>
-                  <div className="form-check form-check-inline">
-                    <input
-                      className="form-check-input"
-                      type="radio"
-                      name="paymentMethod"
-                      checked={form.paymentMethod === "tc"}
-                      value="tc"
-                      onChange={(event) => handlerOnchange(event)}
-                      id="tc"
-                    />
-                    <label className="form-check-label" htmlFor="tc">
-                      Tarjeta de credito - debito
-                    </label>
-                  </div>
-=======
->>>>>>> 6452f0c4b1e01a6a421d6a805ff32fb40c93ee66
                 </div>
               </div>
             </div>
@@ -223,13 +154,6 @@ export const Checkout = () => {
             {success}
           </div>
         )}
-<<<<<<< HEAD
-        <button type="submit" className="btn btn-primary btn-lg">
-          enviar
-        </button>
-        <a href="/" type="button" className="btn btn-secondary btn-lg">
-          seguir comprando
-=======
         {form.direccion ? (
           <button type="submit" className="btn btn-primary btn-lg">
             enviar
@@ -240,7 +164,6 @@ export const Checkout = () => {
 
         <a href="/" type="button" className="btn btn-secondary btn-lg">
           seguir comprando - volver a la tienda
->>>>>>> 6452f0c4b1e01a6a421d6a805ff32fb40c93ee66
         </a>
       </div>
     </form>

@@ -12,12 +12,12 @@
   "dependencies": {
     "appwrite": "11.0.0",
 <<<<<<< HEAD
-    "react": "^18.2.0",
-=======
     "bootstrap": "5.3.2",
     "react": "^18.2.0",
     "react-bootstrap": "2.10.0",
->>>>>>> 6452f0c4b1e01a6a421d6a805ff32fb40c93ee66
+=======
+    "react": "^18.2.0",
+>>>>>>> 1ae4e6f (Sprint 3 - Implementacion de inicio de sesion para administrador, agregar producots, editar y eliminar, pruebas y correcciones de errores)
     "react-dom": "^18.2.0",
     "react-router-dom": "6.11.2",
     "recoil": "0.7.7",

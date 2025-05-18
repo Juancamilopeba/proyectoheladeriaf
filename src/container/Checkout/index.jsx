@@ -14,30 +14,6 @@ export const Checkout = () => {
   const [error, setError] = useState();
   const [success, setssucces] = useState();
 <<<<<<< HEAD
-
-  const handlerOnchange = (event) => {
-    setForm({ ...form, [event.target.name]: event.target.value });
-  };
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    event.stopPropagation();
-    product.forEach(async (product) => {
-      const response = await crearPredido({
-        ...form,
-        productName: product.name,
-        price: product.price,
-        description: product.description,
-        quantity: product.quantity,
-      });
-      if (!response.message) {
-        setssucces("Registro exitoso");
-        setTimeout(() => {
-          navigate("/", { replace: false });
-        }, 3000);
-      }
-      setError(response.message);
-    });
-=======
   const userInfo = JSON.parse(sessionStorage.getItem("userInfo")) || {};
   const handlerOnchange = (event) => {
     setForm({ ...form, [event.target.name]: event.target.value });
@@ -63,7 +39,31 @@ export const Checkout = () => {
       }, 3000);
     }
     setError(response.message);
->>>>>>> 6452f0c4b1e01a6a421d6a805ff32fb40c93ee66
+=======
+
+  const handlerOnchange = (event) => {
+    setForm({ ...form, [event.target.name]: event.target.value });
+  };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    product.forEach(async (product) => {
+      const response = await crearPredido({
+        ...form,
+        productName: product.name,
+        price: product.price,
+        description: product.description,
+        quantity: product.quantity,
+      });
+      if (!response.message) {
+        setssucces("Registro exitoso");
+        setTimeout(() => {
+          navigate("/", { replace: false });
+        }, 3000);
+      }
+      setError(response.message);
+    });
+>>>>>>> 1ae4e6f (Sprint 3 - Implementacion de inicio de sesion para administrador, agregar producots, editar y eliminar, pruebas y correcciones de errores)
   };
 
   return (
@@ -89,18 +89,18 @@ export const Checkout = () => {
             >
               <div className="accordion-body">
 <<<<<<< HEAD
-=======
                 <p>Identificacion: {userInfo.documents[0].cedula}</p>
->>>>>>> 6452f0c4b1e01a6a421d6a805ff32fb40c93ee66
+=======
+>>>>>>> 1ae4e6f (Sprint 3 - Implementacion de inicio de sesion para administrador, agregar producots, editar y eliminar, pruebas y correcciones de errores)
                 <input
                   type="text"
                   name="username"
                   placeholder="Nombre completo"
                   className="form-control"
 <<<<<<< HEAD
-=======
                   value={userInfo.documents[0].name}
->>>>>>> 6452f0c4b1e01a6a421d6a805ff32fb40c93ee66
+=======
+>>>>>>> 1ae4e6f (Sprint 3 - Implementacion de inicio de sesion para administrador, agregar producots, editar y eliminar, pruebas y correcciones de errores)
                   onChange={(event) => handlerOnchange(event)}
                 />
                 <input
@@ -109,9 +109,9 @@ export const Checkout = () => {
                   placeholder="Direccion de envio"
                   className="form-control"
 <<<<<<< HEAD
-=======
                   value={form.direccion}
->>>>>>> 6452f0c4b1e01a6a421d6a805ff32fb40c93ee66
+=======
+>>>>>>> 1ae4e6f (Sprint 3 - Implementacion de inicio de sesion para administrador, agregar producots, editar y eliminar, pruebas y correcciones de errores)
                   onChange={(event) => handlerOnchange(event)}
                 />
                 <input
@@ -120,9 +120,9 @@ export const Checkout = () => {
                   name="telefono"
                   className="form-control"
 <<<<<<< HEAD
-=======
                   value={form.phone || userInfo.documents[0].phone}
->>>>>>> 6452f0c4b1e01a6a421d6a805ff32fb40c93ee66
+=======
+>>>>>>> 1ae4e6f (Sprint 3 - Implementacion de inicio de sesion para administrador, agregar producots, editar y eliminar, pruebas y correcciones de errores)
                   onChange={(event) => handlerOnchange(event)}
                 />
                 <div className="">
@@ -144,6 +144,7 @@ export const Checkout = () => {
                     </label>
                   </div>
 <<<<<<< HEAD
+=======
                   <div className="form-check form-check-inline">
                     <input
                       className="form-check-input"
@@ -172,8 +173,7 @@ export const Checkout = () => {
                       Tarjeta de credito - debito
                     </label>
                   </div>
-=======
->>>>>>> 6452f0c4b1e01a6a421d6a805ff32fb40c93ee66
+>>>>>>> 1ae4e6f (Sprint 3 - Implementacion de inicio de sesion para administrador, agregar producots, editar y eliminar, pruebas y correcciones de errores)
                 </div>
               </div>
             </div>
@@ -224,12 +224,6 @@ export const Checkout = () => {
           </div>
         )}
 <<<<<<< HEAD
-        <button type="submit" className="btn btn-primary btn-lg">
-          enviar
-        </button>
-        <a href="/" type="button" className="btn btn-secondary btn-lg">
-          seguir comprando
-=======
         {form.direccion ? (
           <button type="submit" className="btn btn-primary btn-lg">
             enviar
@@ -240,7 +234,13 @@ export const Checkout = () => {
 
         <a href="/" type="button" className="btn btn-secondary btn-lg">
           seguir comprando - volver a la tienda
->>>>>>> 6452f0c4b1e01a6a421d6a805ff32fb40c93ee66
+=======
+        <button type="submit" className="btn btn-primary btn-lg">
+          enviar
+        </button>
+        <a href="/" type="button" className="btn btn-secondary btn-lg">
+          seguir comprando
+>>>>>>> 1ae4e6f (Sprint 3 - Implementacion de inicio de sesion para administrador, agregar producots, editar y eliminar, pruebas y correcciones de errores)
         </a>
       </div>
     </form>

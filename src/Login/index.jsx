@@ -1,9 +1,5 @@
 import { useState } from "react";
-<<<<<<< HEAD
-import { LoginSession } from "../../utils/appwriteConfig";
-=======
 import { LoginSession, getUserInformation } from "../../utils/appwriteConfig";
->>>>>>> 6452f0c4b1e01a6a421d6a805ff32fb40c93ee66
 import "./styles.css";
 import { useNavigate } from "react-router-dom";
 const Login = () => {
@@ -23,15 +19,10 @@ const Login = () => {
     event.preventDefault();
     event.stopPropagation();
     const { email, password } = form;
-<<<<<<< HEAD
-
-    const response = await LoginSession(email, password);
-=======
     const response = await LoginSession(email, password);
     const userInfo = await getUserInformation(email);
 
     sessionStorage.setItem("userInfo", JSON.stringify(userInfo));
->>>>>>> 6452f0c4b1e01a6a421d6a805ff32fb40c93ee66
     if (response.userId) {
       setssucces("Registro exitoso");
 
@@ -47,15 +38,9 @@ const Login = () => {
     <div className="wrapper fadeInDown">
       <h1>Bienvenido</h1>
       <div id="formContent">
-<<<<<<< HEAD
-        <div className="fadeIn first">
-          <img src="" id="icon" alt="User Icon" />
-        </div>
-=======
         {/*<div className="fadeIn first">
           <img src="" id="icon" alt="User Icon" />
   </div>*/}
->>>>>>> 6452f0c4b1e01a6a421d6a805ff32fb40c93ee66
 
         <form onSubmit={(event) => handleSubmit(event)}>
           <input
@@ -95,13 +80,8 @@ const Login = () => {
         </form>
 
         <div id="formFooter">
-<<<<<<< HEAD
-          <a className="underlineHover" href="#">
-            Forgot Password?
-=======
           <a className="underlineHover" href="/register">
             Crear una cuenta
->>>>>>> 6452f0c4b1e01a6a421d6a805ff32fb40c93ee66
           </a>
         </div>
       </div>
